@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lofi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project B | The Home Screen</title>
+
+    <!-- the CDN Files -->
+    <link rel="stylesheet" href="skin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="dark:bg-black">
+
+    <!-- The Side Bar For the Home Screen -->
+
+
+    <nav class="fixed top-0 z-50 w-full border-b border-gray-200 dark:bg-black dark:border-gray-700">
+        <div class="px-3 py-3 lg:px-5 lg:pl-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar"
+                        aria-controls="logo-sidebar" type="button"
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        <span class="sr-only">Open sidebar</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="index.html" class="flex ml-2 md:mr-24">
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Bharat
+                            One</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex items-center ml-3">
+                        <div>
+                            <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 mr-3"
+                                aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="w-8 h-8 rounded-full"
+                                    src="https://media.licdn.com/dms/image/D4D03AQH-tVcHNTfqSg/profile-displayphoto-shrink_800_800/0/1668423128831?e=2147483647&v=beta&t=G-Iep2O_-IhFiPySwtzGD-Y-tb2i54eMgqgJtDI7zNo"
+                                    alt="user photo">
+                            </button>
+                        </div>
+                        <div class="z-50 bg-white hidden my-4 text-base list-none divide-y divide-gray-100 rounded shadow dark:bg-black dark:divide-gray-600"
+                            id="dropdown-user">
+                            <div class="px-4 py-3" role="none">
+                                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                    Vinay Buddhi
+                                </p>
+                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                    vinaybuddhi@one.in
+                                </p>
+                            </div>
+                            <hr>
+                            <ul class="py-1 font-medium" role="none">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem" onclick="my_profile.showModal()">Profile</a>
+                                 
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">APP ID : 69VZ782023</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Sign out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-black dark:border-gray-700"
+        aria-label="Sidebar">
+        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-black">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 22 21">
+                            <path
+                                d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                            <path
+                                d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                        </svg>
+                        <span class="ml-3">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Service</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Messages</span>
+                        <span
+                            class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 18">
+                            <path
+                                d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">User Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="my_accounts.showModal()"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Accounts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="my_settings.showModal()"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Settings</span>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- the start of useralert modal -->
+
+    <dialog id="my_useralert" class="modal">
+        <div class="modal-box fixed w-full max-w-screen-2xl h-full max-h-screen rounded-lg dark:bg-black scrolly">
+            <form method="dialog">
+                <button class="btn btn-lg btn-circle btn-ghost absolute right-2 top-2 text-blue-800">✕</button>
+            </form>
+            <div class="px-6 py-4 border-b rounded-t dark:border-gray-600 dark:bg-black">
+                <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+                    The Accounts Section
+                </h3>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- the end of useralert modal -->
+
+    <!-- the start of accounts modal -->
+
+    <dialog id="my_accounts" class="modal">
+        <div class="modal-box fixed w-full max-w-screen-2xl h-full max-h-screen dark:bg-black scrolly">
+            <form method="dialog">
+                <button class="btn btn-lg btn-circle btn-ghost absolute right-2 top-2 text-blue-800">✕</button>
+            </form>
+            <div class="px-6 py-4 rounded-t dark:border-gray-600 dark:bg-black">
+                <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+                    Manage Your Account
+                </h3>
+                <p class="text-sm font-normal text-gray-500 dark:text-white mt-4 ml-4">Your Data In Bharat One</p>
+            </div>
+            <hr class="mb-6 mt-6" style="border: 1px solid black;">
+
+                <h1 class="text-base font-semibold text-gray-900 dark:text-white texto mt-4 mb-6 ml-10" style="font-size: large;">Profile</h1>
+
+            <!-- the main contents here -->
+            <form class="container px-6 py-4">
+
+                <div class="p-3 mb-6" style="margin-left: 100px;">
+                    <button type="button"
+                        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 mr-3">
+                        <img class="w-24 h-24 rounded-full" onclick="my_profile.showModal()"
+                        src="https://media.licdn.com/dms/image/D4D03AQH-tVcHNTfqSg/profile-displayphoto-shrink_800_800/0/1668423128831?e=2147483647&v=beta&t=G-Iep2O_-IhFiPySwtzGD-Y-tb2i54eMgqgJtDI7zNo">                   
+                    </button>
+                </div>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email" id="floating_email"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
+                        Name</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_first_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+                            name</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_last_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+                            name</label>
+                    </div>
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+
+                    <div class="relative max-w-sm">
+                        <h1 class="p-3">Select Your Date Of Birth</h1>
+                        <input type="date" class="rounded-full w-80" id="date" name="date" placeholder="Choose a Date">
+                    </div>
+
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                    <h1>Choose Your Gender</h1><br>
+
+                    <div class="flex items-center mb-4">
+                        <input id="default-radio-1" type="radio" value="" name="default-radio"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-radio-1"
+                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="default-radio-2" type="radio" value="" name="default-radio"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-radio-2"
+                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Female</label>
+                    </div>
+
+                </div>
+
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <label>Blood Group</label>
+                        <select id="underline_select"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group mt-6">
+                        <input type="text" name="floating_company" id="floating_company"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_company"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Any Allergies</label>
+                    </div>
+                </div>
+
+                <hr class="mb-6 mt-6" style="border: 1px solid black;">
+
+                <h1 class="text-base font-semibold text-gray-900 dark:text-white texto mt-4 mb-6" style="font-size: large;">Contact Information</h1>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email" id="floating_email"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your
+                        Email Id</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_first_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_last_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Gurdian Phone Number</label>
+                    </div>
+                </div>
+
+                <hr class="mb-6 mt-6" style="border: 1px solid black;">
+
+                <h1 class="text-base font-semibold text-gray-900 dark:text-white texto mt-4 mb-6" style="font-size: large;">Your Private Information</h1>
+
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_first_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Aadhar Number</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_last_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Voter ID</label>
+                    </div>
+                </div>
+
+                <hr class="mb-6 mt-6" style="border: 1px solid black;">
+
+                <h1 class="text-base font-semibold text-gray-900 dark:text-white texto mt-4 mb-6" style="font-size: large;">Your Residence Details</h1>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email" id="floating_email"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Street Address</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_first_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_last_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">State</label>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_first_name" id="floating_first_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_first_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Country</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="floating_last_name" id="floating_last_name"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="floating_last_name"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+            </form>
+
+        </div>
+    </dialog>
+
+    <!-- end of accounts modal -->
+
+    <!-- the settings modal -->
+
+    <dialog id="my_settings" class="modal dark:bg-black">
+        <form method="dialog"
+            class="modal-box fixed w-full max-w-screen-2xl h-full max-h-screen rounded-lg dark:bg-black scrolly">
+            <button class="btn btn-lg btn-circle btn-ghost absolute right-2 top-2 text-blue-800">✕</button>
+            <div class="px-6 py-4 border-b rounded-t dark:border-gray-600 dark:bg-black">
+                <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+                    Explore Settings
+                </h3>
+            </div>
+            <div class="p-6">
+                <p class="text-sm font-normal text-gray-500 dark:text-white">Everything Accessed In One Place</p>
+                <ul class="my-4 space-y-3 mt-6">
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Shake For Emergency</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Access Location 24/7</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Stay Connected In <br>Background</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Dark Mode</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Mobile Data Always <br> Active</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-3 text-base text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-black dark:hover:bg-gray-500 dark:text-white">
+                            <span class="flex-1 ml-3 whitespace-nowrap">Turn On Notification <br>Service</span>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <div>
+                    <a href="#"
+                        class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+                        <svg class="w-3 h-3 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        Try Out These Settings, For Best Experience!</a>
+                </div>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- the end of settings modal -->
+
+
+    <!-- the profile modal -->
+
+    <dialog id="my_profile" class="modal">
+        <form method="dialog" class="modal-box fixed w-full max-w-screen-2xl h-full max-h-screen dark:bg-black scrolly">
+            <button class="btn btn-lg btn-circle btn-ghost absolute right-2 top-2 text-blue-800">✕</button>
+            <div class="px-6 py-4 border-b rounded-t dark:border-gray-600 dark:bg-black">
+                <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+                    Your Profile
+                </h3>
+            </div>
+        
+            <hr class="mb-2 mt-2" style="border: 1px solid black;">
+            <h4 class="text-base font-semibold text-gray-900 lg:text-md dark:text-white ml-10" >
+                Visible to Everyone
+            </h4>
+            <hr class="mb-2 mt-2" style="border: 1px solid black;">
+
+            <div class="p-3 mb-6">
+                <button type="button"
+                    class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 mr-3">
+                    <img class="lg:w-96 lg:h-96 rounded-full"
+                    src="https://media.licdn.com/dms/image/D4D03AQH-tVcHNTfqSg/profile-displayphoto-shrink_800_800/0/1668423128831?e=2147483647&v=beta&t=G-Iep2O_-IhFiPySwtzGD-Y-tb2i54eMgqgJtDI7zNo">                   
+                </button>
+            </div>
+      
+        </form>
+    </dialog>
+
+    <!-- the end of profile modal -->
+
+    <div class="p-4 sm:ml-64">
+        <div class="p-4 rounded-lg mt-14">
+            <div class="grid grid-cols-3 gap-4 mb-4">
+            </div>
+            <div
+                class="flex items-center justify-center h-96 mb-4 rounded bg-gray-50 dark:bg-black dark:text-white dark:bg-gray-900 rounded-lg">
+                <h1 class="text-5xl font-medium">Bharat <span style="color: red;">One</span></h1>
+            </div>
+
+            <!-- the category section -->
+
+
+            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                <h2 class="text-2xl tracking-tight text-gray-900 dark:text-white">Some Recommendations Here</h2>
+
+                <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+
+                    <!-- the card 1 -->
+
+
+                    <div class="card p-2 shadow-lg mb-3 max-w-md max-h-72 dark:bg-gray-900 dark:text-white"
+                        style="width: 100%; border: 2px solid;">
+                        <div class=" card-body">
+                            <h5 class="card-title titleo">Alerts</h5>
+                            <p class="card-text">Get Infoed, What's happening Arround You</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn">View Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- the card 2-->
+
+
+                    <div class="card p-2 shadow-lg mb-3 max-w-md max-h-72 dark:bg-gray-900 dark:text-white"
+                        style="width: 100%; border: 2px solid;">
+                        <div class="card-body">
+                            <h5 class="card-title titleo">Lock It</h5>
+                            <p class="card-text">This is an open source image sharing platform for sharing images.
+                            </p>
+                            <div class="card-actions justify-end">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer" id="toggleDim">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="disableOverlayBtn"
+                        class="absolute px-3 py-2 btn-md shadow-md z-50 hidden btn-error font-bold"
+                        style="border-radius: 50px;">Disable Lockdown</button>
+
+
+                    <!-- the card 3 -->
+
+
+                    <div class="card p-2 shadow-lg mb-3 max-w-md max-h-72 dark:bg-gray-900 dark:text-white"
+                        style="width: 100%; border: 2px solid;">
+                        <div class="card-body">
+                            <h5 class="card-title titleo">Dark Mode</h5>
+                            <p class="card-text">having Strain In Your Eyes, Turn On the dark mode ( use the system bark
+                                mode button for best Experience )</p>
+                            <br>
+                            <div class="card-actions justify-end ">
+                                <label class="relative inline-flex items-center mr-5 cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer" id="toggla">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- the card 4 -->
+
+
+                    <div class="card p-2 shadow-lg mb-3 max-w-md max-h-72 dark:bg-gray-900 dark:text-white"
+                        style="width: 100%; border: 2px solid;">
+                        <div class=" card-body">
+                            <h5 class="card-title titleo">Discover</h5>
+                            <p class="card-text">Find Your Loved One's</p><br>
+                            <div class="card-actions justify-end">
+                                <button class="btn">View Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- More products... -->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- The End Of Side Bar For the Home Screen -->
+
+
+    <!-- The Bottom Navigation bar -->
+
+    <div class="btm-nav lg:hidden dark:bg-black">
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+        </button>
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- End Of The Bottom Navigation Bar -->
+    <!-- The Javascript Section -->
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
